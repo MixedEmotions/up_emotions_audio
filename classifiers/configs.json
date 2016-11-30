@@ -1,0 +1,64 @@
+{
+"configs":[
+{
+	"id":"arousal",
+	"classifier":"bash",	
+	"intype":"audio",
+	"run_command":"boaw_models/run_ars.sh",
+	"onyxentity":"emovoc:arousal"
+},{
+	"id":"valence",
+	"classifier":"bash",	
+	"intype":"audio",
+	"run_command":"boaw_models/run_val.sh",
+	"onyxentity":"emovoc:valence"
+},{
+	"id":"gender",
+	"classifier":"bash",	
+	"intype":"audio",
+	"run_command":"RF_models/run_gender.sh",
+	"onyxentity":"gender"
+},{
+	"id":"age",
+	"classifier":"bash",	
+	"intype":"audio",
+	"run_command":"RF_models/run_age.sh",
+	"onyxentity":"age"
+},{
+	"id":"big5a",
+	"classifier":"bash",	
+	"intype":"audio",
+	"run_command":"RF_models/run_Agreeable.sh",
+	"onyxentity":"Agreeableness"
+},{
+	"id":"big5c",
+	"classifier":"bash",	
+	"intype":"audio",
+	"run_command":"RF_models/run_Concious.sh",
+	"onyxentity":"Concioustiousness"
+},{
+	"id":"big5o",
+	"classifier":"bash",	
+	"intype":"audio",
+	"run_command":"RF_models/run_Openness.sh",
+	"onyxentity":"Openness"
+},{
+	"id":"big5e",
+	"classifier":"bash",	
+	"intype":"audio",
+	"run_command":"RF_models/run_Extroversion.sh",
+	"onyxentity":"Extroversion"
+},{
+	"id":"big5n",
+	"classifier":"bash",	
+	"intype":"audio",
+	"run_command":"RF_models/run_Neuroticism.sh",
+	"onyxentity":"Neuroticism"
+},{
+	"id":"sentiment",
+	"classifier":"bash",	
+	"intype":"text",
+	"run_command":"sentiment/sentiment_runner.sh",
+	"onyxentity":"Sentiment"
+}
+]}

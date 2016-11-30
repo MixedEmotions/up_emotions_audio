@@ -1,0 +1,5 @@
+#!/bin/bash
+curl --user testuser:testuser  -X GET "http://X.X.X.X:X/technologies/stt?path=$1&model=ENGLISH_L&result_type=one_best"
+
+#output form: {"result":{"info":{"id":"ID","state":"waiting"}}}
+

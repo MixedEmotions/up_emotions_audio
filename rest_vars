@@ -1,0 +1,2 @@
+REST_FILES=/path/to/download/directory/
+REST_OPENSMILE=/path/to/classifier/directory/

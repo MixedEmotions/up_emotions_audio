@@ -1,0 +1,15 @@
+curl -X POST --data-binary @$1 --user testuser:testuser  http://136.243.53.82:8601/audiofile?path=$1
+{"result":{"version":2,"name":"AudioFileInfoResult","info":{"name":"sss.wav","last_modified":"2016-09-19T10:15:18Z","created":"2016-09-19T10:15:18Z","size":79862,"is_directory":false,"frequency":8000,"length":4.988625,"n_channels":1,"format":"lin16"}}}
+
+curl --user testuser:testuser  -X GET "http://136.243.53.82:8601/technologies/stt?path=$1&model=ENGLISH_L&result_type=one_best"
+{"result":{"version":1,"name":"PendingInfoResult","info":{"id":"aaddd257-95f5-4398-9db9-2cabff12d9da","state":"waiting"}}}
+
+curl --user testuser:testuser  -X GET "http://136.243.53.82:8601/pending/73e01038-b0aa-4b46-8011-084829231671"
+{"result":{"version":1,"name":"PendingInfoResult","info":{"id":"aaddd257-95f5-4398-9db9-2cabff12d9da","state":"waiting"}}}
+{"result":{"version":1,"name":"PendingInfoResult","info":{"id":"aaddd257-95f5-4398-9db9-2cabff12d9da","state":"finished"}}}
+
+
+curl -X POST --data-binary @$1 --user testuser:testuser  http://136.243.53.82:8601/audiofile?path=$1
+{"result":{"version":2,"name":"SpeechRecognitionOneBestResult","file":"\/sad2_happy3_8khz.wav","model":"ENGLISH_L","one_best_result":{"segmentation":[{"channel_id":0,"score":-684.55896,"confidence":13382.554,"start":1600000,"end":4200000,"word":"<s>"},{"channel_id":0,"score":-4015.509,"confidence":-97.95257,"start":4200000,"end":11100000,"word":"LIMITED"},{"channel_id":0,"score":-1345.1619,"confidence":-188.62932,"start":11100000,"end":14000000,"word":"IS"},{"channel_id":0,"score":-2018.9628,"confidence":-75.10674,"start":14000000,"end":19100000,"word":"A"},{"channel_id":0,"score":-2227.218,"confidence":-294.19534,"start":19100000,"end":22800000,"word":"<\/s>"},{"channel_id":0,"score":-605.6393,"confidence":10061.17,"start":23200000,"end":25200000,"word":"<s>"},{"channel_id":0,"score":-1929.8737,"confidence":-41.353687,"start":25200000,"end":28300000,"word":"BUT"},{"channel_id":0,"score":-1288.3638,"confidence":-43.10891,"start":28300000,"end":31200000,"word":"NO"},{"channel_id":0,"score":-839.043,"confidence":-42.473152,"start":31200000,"end":32500000,"word":"I"},{"channel_id":0,"score":-1854.2478,"confidence":-85.816895,"start":32500000,"end":35800000,"word":"REALLY"},{"channel_id":0,"score":-5980.855,"confidence":-290.30914,"start":35800000,"end":45400000,"word":"UNHAPPY"},{"channel_id":0,"score":-973.4547,"confidence":-48.923462,"start":45400000,"end":47800000,"word":"<\/s>"}]}}}
+
+
