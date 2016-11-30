@@ -1,0 +1,67 @@
+package com.opensmile.maven;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class paths {
+	static String FileDirectory = getVar("REST_FILES");
+	static String SMILExtractDir = getVar("REST_OPENSMILE");
+	static String logFile = getVar("REST_OPENSMILE") + "/log.txt";
+	static String logFolder = getVar("REST_OPENSMILE") + "/logs/";
+	static String SMILEconfig = "IS09_emotion_Mine_AR_res_4corpus_0_FE.conf";
+	static String SMILEconfigAugmented = "IS09_emotion_Mine_AR_res_4corpus_0_FE_Augmented.conf";
+	static String var_file = "/var/rest_vars";
+
+	static String getVar(String varname) {
+		// return "done";
+		BufferedReader bufferedReader = null;
+		File f = null;
+		var_file = "/var/rest_vars";
+		try {
+			// return var_file;
+			f = new File(var_file);
+			// return "done"+f.getAbsolutePath();
+			System.out.println(f.getAbsolutePath());
+			if (!f.exists()) {
+				System.out.println(f.getAbsolutePath() + " does not exist!");
+				FileNotFoundException e = new FileNotFoundException();
+				throw e;
+			}
+			bufferedReader = new BufferedReader(new FileReader(var_file));
+			String line;
+			String[] ls;
+			while ((line = bufferedReader.readLine()) != null) {
+				if (line.length() < 2) {
+					bufferedReader.close();
+					return "";
+				}
+				ls = line.split("=");
+				if (ls[0].compareTo(varname) == 0) {
+					bufferedReader.close();
+					return ls[1];
+				}
+			}
+			bufferedReader.close();
+		} catch (IOException e) {
+			// System.out.println();
+			e.printStackTrace();
+			return f.getAbsolutePath() + " " + e.getMessage();
+		}
+		return "";
+	}
+	/*
+	 * static String getBashVar(String varname){ Process p; String line; String
+	 * fullLine=""; String ls[]; try { String[]
+	 * cmd={"sh","-c","echo &"+varname};// | grep "+varname+" |
+	 * tee"};//echo $"+varname}; p = Runtime.getRuntime().exec(cmd);//
+	 * p.waitFor(); BufferedReader in = new BufferedReader(new
+	 * InputStreamReader(p.getInputStream()));
+	 * while((line=in.readLine())!=null){ ls = line.split("=");
+	 * if(ls[0].compareTo(varname)==0) return ls[1]; } } catch (IOException |
+	 * InterruptedException e) { e.printStackTrace(); } return fullLine; }
+	 */
+}

@@ -1,0 +1,5 @@
+#surefire
+#Sun Feb 07 16:25:23 CET 2016
+user.dir=/media/sag/DATA/eclipse_workspace/com.opensmile.maven
+localRepository=/home/sag/.m2/repository
+basedir=/media/sag/DATA/eclipse_workspace/com.opensmile.maven

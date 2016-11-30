@@ -1,0 +1,117 @@
+<html>
+<!-- script src='main2.js'></script>
+<!-- script src='recorder.js'></script -->
+<script type="text/javascript">
+		function preparevals(){
+			
+			var myForm=document.chbxfrm;		
+			var dims = "";
+			
+			
+			
+			if(myForm.ars_chbx.checked)
+				dims+="arousal,";
+
+			if(myForm.val_chbx.checked)
+				dims+="valence,";
+			
+			if(myForm.age_chbx.checked)
+				dims+="age,";
+			
+			if(myForm.gen_chbx.checked)
+				dims+="gender,";
+			
+			if(myForm.prsn_chbx.checked)
+				dims+="big5o,big5c,big5e,big5a,big5n,";
+							
+			if(myForm.sent_chbx.checked)
+				dims+="sentiment,";
+			
+			var input = document.createElement("input");
+			input.setAttribute("type", "hidden");
+			input.setAttribute("name", "dims");
+			input.setAttribute("value", dims.substring(0,dims.length-1));			
+			document.getElementById("idfrmhot").appendChild(input);
+			
+			var inputTime = document.createElement("input");
+			inputTime.setAttribute("type", "hidden");
+			inputTime.setAttribute("name", "timing");
+			 
+			
+			if(myForm.sent_chbx.checked && !myForm.asr_chbx.checked){
+				alert("To run sentiment analysis, you should ckeck ASR!")
+			}
+
+			if(myForm.asr_chbx.checked || myForm.sent_chbx.checked){
+				inputTime.setAttribute("value","asr");
+			}else{
+				inputTime.setAttribute("value","-1,-1");
+			}
+			//alert("I am here");
+			document.getElementById("idfrmhot").appendChild(inputTime);
+			
+			var myupForm=document.upform;
+			var filename = myupForm.file.value;
+			var s = filename.split("\\");
+			var fs = s[s.length-1];		
+			
+			var inputURL = document.createElement("input");
+			inputURL.setAttribute("type", "hidden");
+			inputURL.setAttribute("name", "url");
+			inputURL.setAttribute("value",fs);
+			document.getElementById("idfrmhot").appendChild(inputURL);
+			//alert(dims);
+			//return false;			
+			var myupForm=document.upform;			
+			myupForm.uploadedtext.value=""
+			return true;
+		}	
+		function fileuploaded() {
+			var myupForm=document.upform;			
+			myupForm.uploadedtext.value="File uploaded!"
+			//document.getElementById("idfrmhot").appendChild(inputURL);
+		}
+	</script>
+<body>
+	<h1>Upload an audio file for processing</h1>
+
+	<iframe width="0" height="0"  name="dummyframe" id="dummyframe" onload="return fileuploaded()"></iframe>
+	<form action="aer/upload" method="post" name="upform"
+		enctype="multipart/form-data"  target="dummyframe"  >
+
+		Select a file : <input type="file" name="file" size="45" />
+		<input type="submit" value="Upload It" />
+		<input type="text" name="uploadedtext" value="" readonly>
+	</form>
+	<br>
+	
+	<!-- input type="button" value="Record audio" onclick="return toggleRecording(this);"-->
+	<form name="chbxfrm" >
+	<input type="checkbox" name="ars_chbx" checked> Arousal
+	
+	<input type="checkbox" name="val_chbx" checked> Valence
+	
+	<input type="checkbox" name="age_chbx" value="true" checked> Age
+
+	<input type="checkbox" name="gen_chbx" value="true" checked> Gender
+
+	<input type="checkbox" name="prsn_chbx" value="true" checked> Big 5	Personality traits
+
+	<input type="checkbox" name="asr_chbx" value="true" checked> ASR
+
+	<input type="checkbox" name="sent_chbx" value="true" checked> Sentiment
+
+	</form>
+	<br>
+	<form action="aer/getdims" method="get" id="idfrmhot" name="frmhot"
+		enctype="multipart/form-data" onsubmit="return preparevals()">
+		<!-- input name="dims">hi</input-->
+		<!-- input name="url"></input -->
+		<!-- input name="timing"></input-->
+		<!-- input type="hidden" name="url" value="foo" / --> 
+		<!-- input type="hidden" name="timing" value="-1,-1" / --> 
+		
+		<input type="submit" value="Show the magic!" />
+	</form>
+</body>
+</html>
