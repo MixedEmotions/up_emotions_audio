@@ -14,7 +14,7 @@ To set up the module, you need:
 
 Example:
 
-http://localhost:8888/er/aer/getdims?dims=arousal,valence&url=http://tv-download.dw.com/dwtv_video/flv/wikoe/wikoe20151114_wiruebli_sd_avc.mp4&timing=9,15;147,152
+    http://localhost:8888/er/aer/getdims?dims=arousal,valence&url=http://tv-download.dw.com/dwtv_video/flv/wikoe/wikoe20151114_wiruebli_sd_avc.mp4&timing=9,15;147,152
 
 where:
 
@@ -22,14 +22,14 @@ where:
 
     url: the url of the video/audio or the name of the uploaded file
 
-    timing: start and end of the segments (in seconds). start1,end1;start2,end2
+    timing: start and end of the segments (in seconds): start1,end1;start2,end2, it can be also 'asr' if ASR is available.
 
 
 To upload an audio/video file use curl:
 
-Windows: curl -v -H "Content-Type:multipart/form-data" --user meuser -i -X POST -F "file=@D:\path\to\sample.wav" http://localhost:8888/er/aer/upload
+    Windows: curl -v -H "Content-Type:multipart/form-data" --user meuser -i -X POST -F "file=@D:\path\to\sample.wav" http://localhost:8888/er/aer/upload
 
-Linux: curl -v -H "Content-Type:multipart/form-data" --user meuser -i -X POST -F 'file=@./sample.wav' http://localhost:8888/er/aer/upload
+    Linux: curl -v -H "Content-Type:multipart/form-data" --user meuser -i -X POST -F 'file=@./sample.wav' http://localhost:8888/er/aer/upload
 
 
 Licenses:
