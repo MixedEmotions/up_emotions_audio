@@ -18,15 +18,17 @@ http://localhost:8888/er/aer/getdims?dims=arousal,valence&url=http://tv-download
 
 where:
 
-getdims: desired dimensions separated by comma (arousal,valence)
+    getdims: desired dimensions separated by comma (arousal,valence)
 
-url: the url of the video/audio or the name of the uploaded file
+    url: the url of the video/audio or the name of the uploaded file
 
-timing: start and end of the segments (in seconds). start1,end1;start2,end2
+    timing: start and end of the segments (in seconds). start1,end1;start2,end2
 
 
 To upload an audio/video file use curl:
+
 Windows: curl -v -H "Content-Type:multipart/form-data" --user meuser -i -X POST -F "file=@D:\path\to\sample.wav" http://localhost:8888/er/aer/upload
+
 Linux: curl -v -H "Content-Type:multipart/form-data" --user meuser -i -X POST -F 'file=@./sample.wav' http://localhost:8888/er/aer/upload
 
 
