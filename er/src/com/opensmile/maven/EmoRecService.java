@@ -1,3 +1,18 @@
+/***
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+***/
+
 package com.opensmile.maven;
 
 import java.io.BufferedReader;
@@ -68,7 +83,7 @@ public class EmoRecService extends ResourceConfig {
 		return(Response.status(200).entity(genderateHelp()).build());
 	}
 
-	boolean DOCKER = false;
+	boolean DOCKER = true;
 	@Path("/getdims")
 	@GET
 	@Produces("application/json")
@@ -124,7 +139,7 @@ public class EmoRecService extends ResourceConfig {
 					File cuttedaudioasr = cutAudio(wavFile, String.valueOf(startTime), String.valueOf(duration), 100000+startTime);
 					JSONArray jasr = performASR2(cuttedaudioasr.getAbsolutePath());
 						
-					if(jasr.length()==0){
+					if(jasr ==null || jasr.length()==0){
 						if(startTime==0 && startTime+asraudioleng>=audioDuration){//only one slice
 							temp_text="NO TEXT IS DETECTED!";
 							tim = "-1,-1";
