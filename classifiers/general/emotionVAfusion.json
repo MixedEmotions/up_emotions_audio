@@ -5,8 +5,8 @@
   "author": "@hesamsagha",
   "description": "A module that combines the results of audio and video outputs",
    "extra_params": [
-        "audio": { "required": true},
-        "video": { "required": true}
+        {"audio": { "required": true}},
+        {"video": { "required": true}}
     ],
   "is_activated": true,
   "maxEmotionValue": 1.0,
