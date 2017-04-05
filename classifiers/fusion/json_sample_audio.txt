@@ -1,0 +1,45 @@
+{
+    "entries": [
+        {
+            "emotions": [{
+                "onyx:hasEmotion": {
+                    "pad:arousal": 0.5,
+                    "pad:valence": 0.1
+                }
+            }],            
+            "@id": "http://tv-download.dw.com/dwtv_video/flv/wikoe/wikoe20151114_wiruebli_sd_avc.mp4:time=0,2"
+        },
+        {
+            "emotions": [{
+                "onyx:hasEmotion": {
+                    "pad:arousal": 0.4,
+                    "pad:valence": 0.2
+                }
+            }],
+            "@id": "http://tv-download.dw.com/dwtv_video/flv/wikoe/wikoe20151114_wiruebli_sd_avc.mp4:time=4,6"
+        },
+        {
+            "emotions": [{
+                "onyx:hasEmotion": {
+                    "pad:arousal": 0.3,
+                    "pad:valence": 0.3
+                }
+            }],
+            "@id": "http://tv-download.dw.com/dwtv_video/flv/wikoe/wikoe20151114_wiruebli_sd_avc.mp4:time=8,11"
+        },
+        {
+            "emotions": [{
+                "onyx:hasEmotion": {
+                    "pad:arousal": 0.2,
+                    "pad:valence": 0.4
+                }
+            }],
+            "@id": "http://tv-download.dw.com/dwtv_video/flv/wikoe/wikoe20151114_wiruebli_sd_avc.mp4:time=12,13"
+        }
+    ],
+    "@type": "results",
+    "@context": "http://senpy.cluster.gsi.dit.upm.es/api/contexts/Results.jsonld",
+    "analysis": [
+     "audioAnalysis_vad"
+    ]
+}

@@ -1,64 +1,77 @@
 {
 "configs":[
 {
+	"id":"arousal_dummy",
+	"classifier":"opensmilesvm",	
+	"config":"IS09_full.conf",
+	"entry":"emotions[emotionVA]/onyx:hasEmotion/pad:arousal",
+	"intype":"audio",
+},{
+	"id":"valence_dummy",
+	"classifier":"opensmilesvm",	
+	"config":"IS09_c_full.conf",
+	"entry":"emotions[emotionVA]/onyx:hasEmotion/pad:valence",
+	"intype":"audio",
+},{
 	"id":"arousal",
 	"classifier":"bash",	
 	"intype":"audio",
-	"run_command":"boaw_models/run_ars.sh",
-	"onyxentity":"emovoc:arousal"
+	"entry_name":"emotions",
+	"@idjson":"",
+	"entry":"emotions[emotionVA]/onyx:hasEmotion/pad:arousal",
+	"run_command":"boaw_models_v3/run_ars.sh",
 },{
 	"id":"valence",
 	"classifier":"bash",	
 	"intype":"audio",
-	"run_command":"boaw_models/run_val.sh",
-	"onyxentity":"emovoc:valence"
+	"entry":"emotions[emotionVA]/onyx:hasEmotion/pad:valence",
+	"run_command":"boaw_models_v3/run_val.sh",
 },{
 	"id":"gender",
 	"classifier":"bash",	
 	"intype":"audio",
+	"entry":"traits/general/gender",
 	"run_command":"RF_models/run_gender.sh",
-	"onyxentity":"gender"
 },{
 	"id":"age",
 	"classifier":"bash",	
 	"intype":"audio",
+	"entry":"traits/general/age",
 	"run_command":"RF_models/run_age.sh",
-	"onyxentity":"age"
 },{
 	"id":"big5a",
 	"classifier":"bash",	
 	"intype":"audio",
+	"entry":"traits/Big-5/Agreeableness",
 	"run_command":"RF_models/run_Agreeable.sh",
-	"onyxentity":"Agreeableness"
-},{
-	"id":"big5c",
+},{	"id":"big5c",
 	"classifier":"bash",	
 	"intype":"audio",
+	"entry":"traits/Big-5/Concioustiousness",
 	"run_command":"RF_models/run_Concious.sh",
-	"onyxentity":"Concioustiousness"
 },{
 	"id":"big5o",
 	"classifier":"bash",	
 	"intype":"audio",
+	"entry":"traits/Big-5/Openness",
 	"run_command":"RF_models/run_Openness.sh",
-	"onyxentity":"Openness"
 },{
 	"id":"big5e",
 	"classifier":"bash",	
 	"intype":"audio",
+	"entry":"traits/Big-5/Extroversion",
 	"run_command":"RF_models/run_Extroversion.sh",
-	"onyxentity":"Extroversion"
 },{
 	"id":"big5n",
 	"classifier":"bash",	
 	"intype":"audio",
-	"run_command":"RF_models/run_Neuroticism.sh",
-	"onyxentity":"Neuroticism"
+	"entry":"traits/Big-5/Neutroticism",
+	"run_command":"RF_models/run_Neuroticism.sh"
 },{
 	"id":"sentiment",
 	"classifier":"bash",	
 	"intype":"text",
-	"run_command":"sentiment/sentiment_runner.sh",
-	"onyxentity":"Sentiment"
+	"entry":"sentiments/marl:polarityValue",
+	"run_command":"sentiment/sentiment_runner.sh"
 }
 ]}

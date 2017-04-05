@@ -27,7 +27,7 @@ public class openSMILEclassifier extends Classifier {
 	@Override
 	public boolean configure(JSONObject jo) {
 		configFile = jo.getString("config");
-		onyxentity = jo.getString("onyxentity");
+		entry = jo.getString("entry");
 		intype = jo.getString("intype");
 		return true;
 	}
@@ -61,11 +61,10 @@ public class openSMILEclassifier extends Classifier {
 		case "regression":
 			double out = jo.getDouble("VALUE");
 			double conf = (double)((JSONObject)jo.getJSONArray("PROB").get(0)).get("CONFIDENCE");
-			jop.put(onyxentity, out);
-			jop.put("confidence", conf);
+			jop = createJsonEntry(entry, out);
 			break;
 		case "classification":
-			jop.put(onyxentity, jo.getJSONArray("PROB"));
+			jop = createJsonEntry(entry, jo.getJSONArray("PROB"));
 			break;			
 		}
 		return jop;

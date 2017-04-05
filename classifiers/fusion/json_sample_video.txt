@@ -1,0 +1,33 @@
+{
+  "@context": "http://senpy.cluster.gsi.dit.upm.es/api/contexts/Results.jsonld", 
+  "@type": "results", 
+  "analysis": [
+     "videoAnalysis_vad"
+  ],
+  "entries": [
+    {
+      "@id": "shortTest.mp4:time=0.0,5.0", 
+      "emotions": [        
+        {
+          "onyx:hasEmotion": {
+            "@type": "emotion", 
+            "pad:arousal": -0.4, 
+            "pad:pleasure": -0.2
+          }
+        }
+      ]
+    }, 
+    {
+      "@id": "shortTest.mp4:time=5.0,10.0", 
+      "emotions": [        
+        {
+          "onyx:hasEmotion": {
+            "@type": "emotion", 
+            "pad:arousal": 0.2, 
+            "pad:pleasure": 0.3
+          }
+        }
+      ]
+    }
+  ]
+}

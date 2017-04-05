@@ -1,0 +1,15 @@
+You have to set these parameters:
+getdims: desired dimentions separated by comma (arousal,valence,age,gender,big5O,big5C,big5E,big5A,big5N,sentiment)
+note that, to have sentiment, you should only have 'asr' (automatic speech recognition) in the 'timing' parameter.
+url:the url of the video/audio or the name of the uploaded file
+timing: start and end of the segments (in seconds). start1,end1;start2,end2, OR asr
+when you choose 'asr', the audio file is segmented for each spoken sentence (useful for sentiment recognition) 
+
+Example:
+http://mixedemotions.fim.uni-passau.de:8080/er/aer/getdims?dims=arousal,valence,gender,age,big5o,big5c,big5e,big5a,big5n&url=http://tv-download.dw.com/dwtv_video/flv/wikoe/wikoe20151114_wiruebli_sd_avc.mp4&timing=9,15;147,152
+
+To upload an audio/video file use curl:
+Windows: curl -v -H \"Content-Type:multipart/form-data\" --user meuser -i -X POST -F \"file=@D:\\path\\to\\sample.wav\" http://mixedemotions.fim.uni-passau.de:8080/er/aer/upload
+Linux: curl -v -H \"Content-Type:multipart/form-data\" --user meuser -i -X POST -F 'file=@./sample.wav' http://mixedemotions.fim.uni-passau.de:8080/er/aer/upload
+
+GUI interface: http://mixedemotions.fim.uni-passau.de:8080/er/FileUpload.html

@@ -1,0 +1,179 @@
+{
+    "entries": [
+        {
+            "emotions": [
+                {"onyx:hasEmotion": {
+                    "pad:arousal": 0.5,
+                    "pad:valence": 0.1
+                }},
+                {"onyx:hasEmotion": {
+                    "@type": "emotion",
+                    "pad:pleasure": -0.2,
+                    "pad:arousal": -0.4
+                }},
+                {
+                    "onyx:hasEmotion": {
+                        "pad:arousal": 0.04999999999999999,
+                        "pad:valence": -0.05
+                    },
+                    "@type": "emotion",
+                    "@id": "emotionVAfusion"
+                }
+            ],
+            "@id": "http://tv-download.dw.com/dwtv_video/flv/wikoe/wikoe20151114_wiruebli_sd_avc.mp4:time=0.0,2.0"
+        },
+        {
+            "emotions": [
+                {"onyx:hasEmotion": {
+                    "@type": "emotion",
+                    "pad:pleasure": -0.2,
+                    "pad:arousal": -0.4
+                }},
+                {
+                    "onyx:hasEmotion": {
+                        "pad:arousal": -0.4,
+                        "pad:valence": -0.2
+                    },
+                    "@type": "emotion",
+                    "@id": "emotionVAfusion"
+                }
+            ],
+            "@id": "shortTest.mp4:time=2.0,4.0"
+        },
+        {
+            "emotions": [
+                {"onyx:hasEmotion": {
+                    "pad:arousal": 0.4,
+                    "pad:valence": 0.2
+                }},
+                {"onyx:hasEmotion": {
+                    "@type": "emotion",
+                    "pad:pleasure": -0.2,
+                    "pad:arousal": -0.4
+                }},
+                {
+                    "onyx:hasEmotion": {
+                        "pad:arousal": 0,
+                        "pad:valence": 0
+                    },
+                    "@type": "emotion",
+                    "@id": "emotionVAfusion"
+                }
+            ],
+            "@id": "http://tv-download.dw.com/dwtv_video/flv/wikoe/wikoe20151114_wiruebli_sd_avc.mp4:time=4.0,5.0"
+        },
+        {
+            "emotions": [
+                {"onyx:hasEmotion": {
+                    "pad:arousal": 0.4,
+                    "pad:valence": 0.2
+                }},
+                {"onyx:hasEmotion": {
+                    "@type": "emotion",
+                    "pad:pleasure": -0.2,
+                    "pad:arousal": -0.4
+                }},
+                {"onyx:hasEmotion": {
+                    "@type": "emotion",
+                    "pad:pleasure": 0.3,
+                    "pad:arousal": 0.2
+                }},
+                {
+                    "onyx:hasEmotion": {
+                        "pad:arousal": 0.06666666666666667,
+                        "pad:valence": 0.09999999999999999
+                    },
+                    "@type": "emotion",
+                    "@id": "emotionVAfusion"
+                }
+            ],
+            "@id": "http://tv-download.dw.com/dwtv_video/flv/wikoe/wikoe20151114_wiruebli_sd_avc.mp4:time=5.0,6.0"
+        },
+        {
+            "emotions": [
+                {"onyx:hasEmotion": {
+                    "@type": "emotion",
+                    "pad:pleasure": 0.3,
+                    "pad:arousal": 0.2
+                }},
+                {
+                    "onyx:hasEmotion": {
+                        "pad:arousal": 0.2,
+                        "pad:valence": 0.3
+                    },
+                    "@type": "emotion",
+                    "@id": "emotionVAfusion"
+                }
+            ],
+            "@id": "shortTest.mp4:time=6.0,8.0"
+        },
+        {
+            "emotions": [
+                {"onyx:hasEmotion": {
+                    "pad:arousal": 0.3,
+                    "pad:valence": 0.3
+                }},
+                {"onyx:hasEmotion": {
+                    "@type": "emotion",
+                    "pad:pleasure": 0.3,
+                    "pad:arousal": 0.2
+                }},
+                {
+                    "onyx:hasEmotion": {
+                        "pad:arousal": 0.25,
+                        "pad:valence": 0.3
+                    },
+                    "@type": "emotion",
+                    "@id": "emotionVAfusion"
+                }
+            ],
+            "@id": "http://tv-download.dw.com/dwtv_video/flv/wikoe/wikoe20151114_wiruebli_sd_avc.mp4:time=8.0,10.0"
+        },
+        {
+            "emotions": [
+                {"onyx:hasEmotion": {
+                    "pad:arousal": 0.3,
+                    "pad:valence": 0.3
+                }},
+                {"onyx:hasEmotion": {
+                    "@type": "emotion",
+                    "pad:pleasure": 0.3,
+                    "pad:arousal": 0.2
+                }},
+                {
+                    "onyx:hasEmotion": {
+                        "pad:arousal": 0.25,
+                        "pad:valence": 0.3
+                    },
+                    "@type": "emotion",
+                    "@id": "emotionVAfusion"
+                }
+            ],
+            "@id": "http://tv-download.dw.com/dwtv_video/flv/wikoe/wikoe20151114_wiruebli_sd_avc.mp4:time=10.0,11.0"
+        },
+        {
+            "emotions": [
+                {"onyx:hasEmotion": {
+                    "pad:arousal": 0.2,
+                    "pad:valence": 0.4
+                }},
+                {
+                    "onyx:hasEmotion": {
+                        "pad:arousal": 0.2,
+                        "pad:valence": 0.4
+                    },
+                    "@type": "emotion",
+                    "@id": "emotionVAfusion"
+                }
+            ],
+            "@id": "http://tv-download.dw.com/dwtv_video/flv/wikoe/wikoe20151114_wiruebli_sd_avc.mp4:time=12.0,13.0"
+        }
+    ],
+    "@type": "results",
+    "analysis": [
+        "videoAnalysis_vad",
+        "audioAnalysis_vad",
+        "emotionVAfusion:http://mixedemotions.fim.uni-passau.de:8080/er/general/emotionVAfusion"
+    ],
+    "@context": "http://senpy.cluster.gsi.dit.upm.es/api/contexts/Results.jsonld"
+}

@@ -27,7 +27,13 @@ function RecordAudio(stream, cfg) {
     return tmp; // returns an array of array containing data from various channels
   };
 
- 
+ /* this.start() = function() {
+    recording = true;
+  };
+
+  this.stop() = function() {
+    recording = false;
+  };*/
 }
 var recorder;
 function toggleRecording( e ) {
@@ -35,13 +41,24 @@ function toggleRecording( e ) {
     	alert("instop");
     	recorder.stop();
     	var recordedData = recorder.getData();
-        e.classList.remove("recording");        
-      
+        e.classList.remove("recording");
+        
+        // stop recording
+        //audioRecorder.stop();
+        //a/udioRecorder.getBuffers( gotBuffers );
+        //saveAudio();
+    	
     } else {
     	recorder = new RecordAudio(userMedia);
         alert("started");
     	recorder.start();
         e.classList.add("recording");
-    
+    	/*window.addEventListener('load', initAudio );
+
+    	alert("I am here");
+        if (!audioRecorder)
+            return;
+        audioRecorder.clear();
+        audioRecorder.record();*/
     }
 }

@@ -29,6 +29,7 @@ public class paths {
 	static String logFolder = getVar("REST_OPENSMILE") + "/logs/";
 	static String SMILEconfig = "IS09_emotion_Mine_AR_res_4corpus_0_FE.conf";
 	static String SMILEconfigAugmented = "IS09_emotion_Mine_AR_res_4corpus_0_FE_Augmented.conf";
+	static String var_file = "/var/rest_vars";
 
 	static String getVar(String varname) {
 		BufferedReader bufferedReader = null;

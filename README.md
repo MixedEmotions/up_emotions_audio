@@ -31,6 +31,10 @@ To upload an audio/video file use curl:
 
     Linux: curl -v -H "Content-Type:multipart/form-data" --user meuser -i -X POST -F 'file=@./sample.wav' http://localhost:8888/er/aer/upload
 
+Moreover, this repository handles the fusion of audio and video outputs.
+
+    See http://localhost:8888/er/general for more information
+
 
 Licenses:
 

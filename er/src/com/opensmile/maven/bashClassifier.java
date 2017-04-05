@@ -28,7 +28,7 @@ public class bashClassifier extends Classifier {
 	@Override
 	public boolean configure(JSONObject json) {
 		run_command = json.getString("run_command");
-		onyxentity = json.getString("onyxentity");
+		entry = json.getString("entry");
 		intype = json.getString("intype");
 		return true;
 	}
@@ -77,12 +77,10 @@ public class bashClassifier extends Classifier {
 		switch((String)jo.get("TYPE")){
 		case "regression":
 			double out = jo.getDouble("VALUE");
-			double conf = (double)(((JSONObject)jo.getJSONArray("PROB").get(0)).getDouble("CONFIDENCE"));
-			jop.put(onyxentity, out);
-			jop.put("confidence", conf);
+			jop = createJsonEntry(entry, out);
 			break;
 		case "classification":
-			jop.put(onyxentity, jo.getJSONArray("PROB"));
+			jop = createJsonEntry(entry, jo.getJSONArray("PROB"));
 			break;			
 		}
 		return jop;		

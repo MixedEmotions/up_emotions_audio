@@ -1,0 +1,20 @@
+{
+  "@context": "http://senpy.cluster.gsi.dit.upm.es/api/contexts/Plugin.jsonld",
+  "@id": "emotionVAfusion",
+  "@type": "emotionFusion",
+  "author": "@hesamsagha",
+  "description": "A module that combines the results of audio and video outputs",
+   "extra_params": [
+        "audio": { "required": true},
+        "video": { "required": true}
+    ],
+  "is_activated": true,
+  "maxEmotionValue": 1.0,
+  "minEmotionValue": -1.0,
+  "module": "fusion",
+  "name": "fuse",
+  "onyx:usesEmotionModel": "emoml:pad-dimensions",
+  "requirements": {},
+  "url": "https://github.com/MixedEmotions/up_emotions_audio",
+  "version": "0.1"
+}
