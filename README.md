@@ -47,7 +47,5 @@ openSMILE:
     WEKA
     GPL 3
 
-In case of using this module, please cite the following papers:
-
-    EYBEN, F., WENINGER, F., GROSS, F., AND SCHULLER, B. Recent Developments in openSMILE, the Munich Open-Source Multimedia Feature Extractor. In Proceedings of the 21st ACM International Conference on Multimedia, MM 2013 (Barcelona, Spain, October 2013), ACM, ACM, pp. 835–838.
-    SCHMITT, M., RINGEVAL, F., AND SCHULLER, B. At the Border of Acoustics and Linguistics: Bag-of-Audio-Words for the Recognition of Emotions in Speech. In Proceedings INTERSPEECH 2016, 17th Annual Conference of the International Speech Communication Association
+In case of using this module, please cite the following paper:
+http://ieeexplore.ieee.org/abstract/document/8269329/
